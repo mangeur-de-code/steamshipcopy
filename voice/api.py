@@ -64,11 +64,11 @@ class BasicAgentServiceWithPersonalityAndVoice(AgentService):
         """Pydantic definition of the user-settable Configuration of this Agent."""
 
         telegram_bot_token: str = Field(
-            "", description="[Optional] Secret token for connecting to Telegram"
+            "7101057709:AAEWCNG7vco-e6vpA3O_0MFkyXGuZQPMXwg", description="[Optional] Secret token for connecting to Telegram"
         )
         eleven_labs_voice_id: str = Field(
-            "pNInz6obpgDQGcFmaJgB",
-            description="[Optional] ElevenLabs voice ID (default: Adam)",
+            "D2SwHXpPbNoq0s1DZWXb",
+            description="[Optional] ElevenLabs voice ID (default: british)",
         )
 
     config: BasicAgentServiceConfig
@@ -143,7 +143,12 @@ class BasicAgentServiceWithPersonalityAndVoice(AgentService):
         """Override run-agent to patch in audio generation as a finishing step for text output."""
 
         speech = GenerateSpeechTool()
-        speech.generator_plugin_config = {"voice_id": self.config.eleven_labs_voice_id}
+        speech.generator_plugin_config = {
+                "voice_id": "D2SwHXpPbNoq0s1DZWXb",
+                "elevenlabs_api_key": "",
+                "stability": 0.5,
+                "similarity_boost": 0.8
+        }
 
         def to_speech_if_text(block: Block):
             nonlocal speech

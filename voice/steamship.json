@@ -1,9 +1,9 @@
 {
 	"type": "package",
-	"handle": "ai-character-with-voice",
+	"handle": "lala-copy_test",
 	"version": "1.0.2",
 	"description": "A character whose personality you can customize. Responds with voice and can generate Stable Diffusion images.",
-	"author": "",
+	"author": "3GUNS",
 	"entrypoint": "Unused",
 	"public": true,
 	"plugin": null,
@@ -17,12 +17,12 @@
 		"telegram_bot_token": {
 			"type": "string",
 			"description": "[Optional] Secret token for connecting to Telegram",
-			"default": ""
+			"default": "7101057709:AAEWCNG7vco-e6vpA3O_0MFkyXGuZQPMXwg"
 		},
 		"eleven_labs_voice_id": {
 			"type": "string",
-			"description": "[Optional] ElevenLabs voice ID (default: Adam)",
-			"default": "pNInz6obpgDQGcFmaJgB"
+			"description": "[Optional] ElevenLabs voice ID (default: british)",
+			"default": "D2SwHXpPbNoq0s1DZWXb"
 		}
 	},
 	"steamshipRegistry": {
